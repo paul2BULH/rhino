@@ -1,0 +1,6 @@
+streamlit==1.37.1
+PyMuPDF==1.24.9
+pydantic==2.8.2
+google-genai==0.3.0
+# Fallback older SDK (some environments still use the legacy package name)
+google-generativeai==0.8.3

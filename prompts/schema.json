@@ -1,0 +1,100 @@
+{
+  "type": "object",
+  "properties": {
+    "codes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "pcs_code": {
+            "type": "string",
+            "description": "7-character ICD-10-PCS code, e.g., 0Y6J0Z0"
+          },
+          "confidence": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "explanation": {
+            "type": "string"
+          },
+          "components": {
+            "type": "object",
+            "properties": {
+              "section": {
+                "type": "string"
+              },
+              "body_system": {
+                "type": "string"
+              },
+              "root_operation": {
+                "type": "string"
+              },
+              "body_part": {
+                "type": "string"
+              },
+              "approach": {
+                "type": "string"
+              },
+              "device": {
+                "type": "string"
+              },
+              "qualifier": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "section",
+              "body_system",
+              "root_operation",
+              "body_part",
+              "approach",
+              "device",
+              "qualifier"
+            ]
+          }
+        },
+        "required": [
+          "pcs_code",
+          "confidence",
+          "explanation",
+          "components"
+        ]
+      }
+    },
+    "query_opportunities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "suggested_query_text": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "title",
+          "reason",
+          "suggested_query_text"
+        ]
+      }
+    },
+    "checklist_used": {
+      "type": "string"
+    },
+    "determinism_note": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "codes",
+    "query_opportunities",
+    "checklist_used",
+    "determinism_note"
+  ]
+}
